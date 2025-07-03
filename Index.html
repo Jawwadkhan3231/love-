@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Love Story</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hearts span {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall 10s linear infinite;
+      border-radius: 0 0 0 10px;
+    }
+
+    .hearts span::before,
+    .hearts span::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .hearts span::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .hearts span::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+    }
+
+    .slideshow-container {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 600px;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 12px;
+      max-height: 400px;
+      object-fit: contain;
+
+    }
+
+    .caption {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #ffb6c1;
+      min-height: 40px;
+    }
+
+    .typewriter {
+      display: inline-block;
+      border-right: 2px solid pink;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(40, end), blink 0.5s step-end infinite alternate;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from { border-color: transparent }
+      to { border-color: pink }
+    }
+
+    .title {
+      font-size: 2rem;
+      color: #ff69b4;
+      animation: pulse 2s infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .next-btn {
+      margin-top: 25px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      background: #ff69b4;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background: #d63384;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Falling Hearts -->
+  <div class="hearts">
+    <span style="left:10%; animation-delay:0s;"></span>
+    <span style="left:25%; animation-delay:1s;"></span>
+    <span style="left:40%; animation-delay:2s;"></span>
+    <span style="left:55%; animation-delay:3s;"></span>
+    <span style="left:70%; animation-delay:4s;"></span>
+    <span style="left:85%; animation-delay:5s;"></span>
+  </div>
+
+<!-- Music Controls -->
+<div style="position: absolute; top: 20px; right: 20px; z-index: 10;">
+  <button onclick="document.getElementById('bgMusic').play()" style="padding: 8px 16px; margin-right: 5px; border: none; background: #28a745; color: white; border-radius: 20px; cursor: pointer;">
+    ▶️ Play Music
+  </button>
+  <button onclick="document.getElementById('bgMusic').pause()" style="padding: 8px 16px; border: none; background: #dc3545; color: white; border-radius: 20px; cursor: pointer;">
+    ⏹️ Stop Music
+  </button>
+</div>
+
+
+  <!-- Slideshow Content -->
+  <div class="slideshow-container">
+    <div class="title">❤️ Our Love Story ❤️</div>
+
+    
+    <div class="slide">
+      <img src="img1.jpeg" alt="Photo 3">
+      <div class="caption"><span class="typewriter">Tumhari aankhon mein aisi gehraai hai,<br> jaise har raaz meri mohabbat ka chhupa ho unmein 🥰</span></div>
+    </div>
+
+    <div class="slide">
+      <img src="img2.jpeg" alt="Photo 4">
+      <div class="caption"><span class="typewriter">Iss tasveer mein sirf do chehre nahi,<br> ek poori duniya hai jisme sirf tum aur main hain 💫</span></div>
+    </div>
+
+    <div class="slide">
+      <img src="img3.jpeg" alt="Photo 4">
+      <div class="caption"><span class="typewriter">Bas ek muskaan, aur yeh pal hamesha ke liye khaas ban gaya 💫</span></div>
+    </div>
+
+    <div class="slide">
+      <img src="img4.jpeg" alt="Photo 4">
+      <div class="caption"><span class="typewriter">Phoolon mein bhi itni khushboo nahi jitni tumhari muskaan mein hai  💫</span></div>
+    </div>
+
+    <div class="slide">
+      <img src="img5.jpeg" alt="Photo 4">
+      <div class="caption"><span class="typewriter">Tumhein dekh kar lagta hai ke khushi bhi ek shakl le sakti hai 💫</span></div>
+    </div>
+
+    <div class="slide">
+      <img src="img6.jpeg" alt="Photo 4">
+      <div class="caption"><span class="typewriter">Yeh din sirf yaad nahi, <br>ek mehsoos hone waali khushi thi<br> jo sirf tumhare saath hi mumkin thi  💫</span></div>
+    </div>
+
+    <div class="slide">
+      <img src="img7.jpeg" alt="Photo 4">
+      <div class="caption"><span class="typewriter">Us din toh mazaa itna aaya... <br>lag raha tha date pe main gaya hoon, <br>lekin dil toh tum le gayi 😉❤️ 💫</span></div>
+    </div>
+
+    <div class="slide">
+      <img src="img8.jpeg" alt="Photo 4">
+      <div class="caption"><span class="typewriter">Tumhe dekh kar toh dil bhi confuse ho gaya…<br> dhadakna chahe ya ruk jana 😍 💫</span></div>
+    </div>
+
+    <div class="slide">
+      <img src="img9.jpeg" alt="Photo 4">
+      <div class="caption"><span class="typewriter">Jab tumhara haath pakadta hoon,<br> lagta hai saari pareshaniyaan kahin kho jaati hain…<br> jaise sirf tum hi ho aur main hoon, aur duniya ekdum theek hai<br> ❤️✨ 💫</span></div>
+    </div>
+
+    
+
+    <!-- Final Slide with Romantic Shairi -->
+    <div class="slide">
+      <div class="caption">
+        <span class="typewriter">
+          Tujh bin adhura hoon main, yeh tu jaan le,<br>
+          Har saans tujhmein hai, yeh pehchaan le.<br>
+          Khuda se bas yahi dua hai har dafa,<br>
+          Kabhi na chhod ke jaaye tu, yeh armaan le.
+        </span>
+      </div>
+      <div style="margin-top: 20px; font-size: 1rem; color: #fff;">
+        Tum meri muskurahat ka sabab ho,<br>
+        Tum meri duaon ka jawab ho,<br>
+        Zindagi ki har subah tumse ho,<br>
+        Aur har raat tumhare khwab ho. 💖
+      </div>
+    </div>
+
+    <button class="next-btn" onclick="nextSlide()">Next ➡️</button>
+  </div>
+
+  <!-- Romantic Song -->
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+
+  <!-- JavaScript for Manual Slideshow -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlide(index) {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        const typewriter = slides[i].querySelector(".typewriter");
+        if (typewriter) {
+          typewriter.style.animation = "none";
+          void typewriter.offsetWidth;
+          typewriter.style.animation = "";
+        }
+      }
+      slides[index].style.display = "block";
+    }
+
+    function nextSlide() {
+      currentSlide++;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      showSlide(currentSlide);
+    }
+
+    // Show first slide initially
+    showSlide(currentSlide);
+  </script>
+
+</body>
+</html>
